@@ -1,0 +1,259 @@
+/* General Styling & Reset */
+:root {
+    --primary-color: #A34857;
+    --secondary-color: #F8D3D3;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Arial', san-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #ffffff;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* --- Header & Navigation --- */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* --- Hero Section --- */
+
+#hero {
+    background: url(ice-cream-cake-background.jpg) no-repeat center center/cover;
+    background-color: #fcebeb;
+    color: var(--primary-color);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
+}
+
+#hero p {
+    font-size: 1.3em;
+    font-style: italic;
+    max-width: 600px;
+}
+
+/* --- About & Featured Sections --- */
+#about {
+    background-color: var(--secondary-color);
+}
+
+#featured ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+#featured li {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    width: 250px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Menu Section --- */
+
+#menu {
+    background-color: #f9f9f9;
+}
+
+#menu h2 {
+    margin-bottom: 40px;
+}
+.category {
+    margin-bottom: 30px;
+}
+
+.category h3 {
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.category ul {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.category li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+/* --- Delivery Section --- */
+
+#delivery {
+    background-color: var(--secondary-color);
+}
+
+#delivery h3 {
+    color: var(--text-dark);
+    margin-top: 20px;
+}
+
+#delivery ul, #delivery ol {
+    list-style-position: inside;
+    max-width: 400px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+#delivery li {
+    margin-bottom: 5px;
+}
+
+#delivery a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- Footer --- */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 40px 20px;
+}
+
+footer h2 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 30px;
+    margin-bottom: 20px;
+}
+
+footer li a, footer li {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer li a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Utility: Scroll To Top Button --- */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    #hero {
+        height: 60vh;
+    }
+    #hero h1 {
+        font-size: 2.5em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    nav ul li a {
+        display: block;
+    }
+    #featured li {
+        width: 80%;
+    }
+}
